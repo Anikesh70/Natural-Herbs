@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-image: url('images/back\ 5.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-image: url('images/back\ 4.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url('Logo SIH.png');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(70%);
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group input[type="submit"] {
+            width: 100px;
+            background-color: #318ac5;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            align-items: center;
+            margin-left: 250px;
+            margin-top: 20px;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .address {
+            margin-top: 15px;
+        }
+
+        .address .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signup-form" action="#" method="post" onsubmit="return validateForm()">
+
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="user-type">User type:</label>
+                <select id="user-type" name="user-type" required onchange="toggleAddressFields()">
+                    <option value="">Select</option>
+                    <option value="remedies-provider">Remedies provider</option>
+                    <option value="user">User</option>
+                </select>
+            </div>
+
+            <div id="address-fields" style="display: none;">
+                <div class="address">
+                    <h3>Address Details:</h3>
+
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" placeholder="Enter the country name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">State:</label>
+                        <select id="state" name="state" required>
+                            <option value="">Select</option>
+                            <!-- Options for states -->
+                            <option value="">Andhra Pradesh</option>
+                            <option value="">Arunachal Pradesh</option>
+                            <option value="">Assam</option>
+                            <option value="">Bihar</option>
+                            <option value="">Chhattisgarh</option>
+                            <option value="">Goa</option>
+                            <option value="">Gujarat</option>
+                            <option value="">Haryana</option>
+                            <option value="">Himanchal Pradesh</option>
+                            <option value="">Jharkhand</option>
+                            <option value="">Karnataka</option>
+                            <option value="">Kerela</option>
+                            <option value="">Madhya Pradesh</option>
+                            <option value="">Maharastra</option>
+                            <option value="">Manipur</option>
+                            <option value="">Meghalaya</option>
+                            <option value="">Mizoram</option>
+                            <option value="">Nagaland</option>
+                            <option value="">Odisha</option>
+                            <option value="">Punjab</option>
+                            <option value="">Rajasthan</option>
+                            <option value="">Sikkim</option>
+                            <option value="">Tamil Nadu</option>
+                            <option value="">Telangana</option>
+                            <option value="">Tripura</option>
+                            <option value="">Uttar Pradesh</option>
+                            <option value="">Uttarakhand</option>
+                            <option value="">West Bengal</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="distt">District:</label>
+                        <select id="distt" name="distt" required>
+                            <option value="">Select</option>
+                            <!-- Options for districts -->
+                            <option value="">Agar Malwa</option>
+                            <option value="">Alirajpur</option>
+                            <option value="">Anuppur</option>
+                            <option value="">Ashoknagar</option>
+                            <option value="">Balaghat</option>
+                            <option value="">Barwani</option>
+                            <option value="">Betul</option>
+                            <option value="">Bhind</option>
+                            <option value="">Bhopal</option>
+                            <option value="">Burhanpur</option>
+                            <option value="">Chhatarpur</option>
+                            <option value="">Chhindwara</option>
+                            <option value="">Damoh</option>
+                            <option value="">Datia</option>
+                            <option value="">Dewas</option>
+                            <option value="">Dhar</option>
+                            <option value="">Dindori</option>
+                            <option value="">Guna</option>
+                            <option value="">Gwalior</option>
+                            <option value="">Harda</option>
+                            <option value="">Hoshangabad</option>
+                            <option value="">Indore</option>
+                            <option value="">Jabalpur</option>
+                            <option value="">Jhabua</option>
+                            <option value="">Katni</option>
+                            <option value="">Khandwa</option>
+                            <option value="">Khargone</option>
+                            <option value="">Mandla</option>
+                            <option value="">Mandsaur</option>
+                            <option value="">Morena</option>
+                            <option value="">Narsinghpur</option>
+                            <option value="">Neemuch</option>
+                            <option value="">Panna</option>
+                            <option value="">Raisen</option>
+                            <option value="">Rajgarh</option>
+                            <option value="">Ratlam</option>
+                            <option value="">Rewa</option>
+                            <option value="">Sagar</option>
+                            <option value="">Satna</option>
+                            <option value="">Sehore</option>
+                            <option value="">Seoni</option>
+                            <option value="">Shahdol</option>
+                            <option value="">Shajapur</option>
+                            <option value="">Sheopur</option>
+                            <option value="">Shivpuri</option>
+                            <option value="">Sidhi</option>
+                            <option value="">Singrauli</option>
+                            <option value="">Tikamgarh</option>
+                            <option value="">Ujjain</option>
+                            <option value="">Umaria</option>
+                            <option value="">Vidisha</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gram">Gram Panchyat:</label>
+                        <select id="gram" name="gram" required>
+                            <option value="">Select</option>
+                            <!-- Options for Gram Panchyat -->
+                            <option value="">Bahrol</option>
+                            <option value="">Bamana</option>
+                            <option value="">Bamhori Jagdish</option>
+                            <option value="">Bamhori Khurd</option>
+                            <option value="">Bamhori sagar</option>
+                            <option value="">Bamoora BHeda</option>
+                            <option value="">Bara</option>
+                            <option value="">Besli</option>
+                            <option value="">Bhadrana</option>
+                            <option value="">Bheda Khas</option>
+                            <option value="">Bhunsha Kamalpur</option>
+                            <option value="">Bijri</option>
+                            <option value="">Biluwa</option>
+                            <option value="">Bineka</option>
+                            <option value="">Budhakhera</option>
+                            <option value="">Chakeri Bineka</option>
+                            <option value="">Chandokh</option>
+                            <option value="">Charodha</option>
+                            <option value="">Chhapri</option>
+                            <option value="">Chil Pahadi</option>
+                            <option value="">Chouka Bheda</option>
+                            <option value="">Dhaboli</option>
+                            <option value="">Dhand</option>
+                            <option value="">Fatehpur</option>
+                            <option value="">Gadar</option>
+                            <option value="">Ganyari</option>
+                            <option value="">Ghoghra</option>
+                            <option value="">Gora Khurd</option>
+                            <option value="">Hanota Patkoi</option>
+                            <option value="">Hanota Sahawan</option>
+                            <option value="">Hanota Umaria</option>
+                            <option value="">Hindoriya</option>
+                            <option value="">Jagthar</option>
+                            <option value="">Jamuniya</option>
+                            <option value="">Jejat Khaira</option>
+                            <option value="">Jhagri</option>
+                            <option value="">Jharai</option>
+                            <option value="">Kalraho</option>
+                            <option value="">Kandari</option>
+                            <option value="">Khandwa</option>
+                            <option value="">Kanti</option>
+                            <option value="">Khara Bheda</option>
+                            <option value="">Khojampur</option>
+                            <option value="">Khuwanri</option>
+                            <option value="">Kotia</option>
+                            <option value="">Kotra</option>
+                            <option value="">Kulla</option>
+                            <option value="">Kuwayala</option>
+                            <option value="">Larethi</option>
+                            <option value="">Magardha</option>
+                            <option value="">Majguwan</option>
+                            <option value="">Manjla</option>
+                            <option value="">Mokalmow</option>
+                            <option value="">Naharmow</option>
+                            <option value="">Naindhara</option>
+                            <option value="">Nimon</option>
+                            <option value="">Padwar</option>
+                            <option value="">Pajnari</option>
+                            <option value="">Patan</option>
+                            <option value="">Patauwa</option>
+                            <option value="">Pidaruwa</option>
+                            <option value="">Pipariya chouda</option>
+                            <option value="">Pipariya chamari</option>
+                            <option value="">Pipariya Illai</option>
+                            <option value="">Pitholi</option>
+                            <option value="">Rakh</option>
+                            <option value="">Rakhsi</option>
+                            <option value="">Ramchandra Pura</option>
+                            <option value="">Rechai Sagar</option>
+                            <option value="">Sahawan</option>
+                            <option value="">Saji</option>
+                            <option value="">Saliyakalan</option>
+                            <option value="">Semra Ahir</option>
+                            <option value="">Semra Dant</option>
+                            <option value="">Singrawan</option>
+                            <option value="">Sonrai</option>
+                            <option value="">Tangiya</option>
+                            <option value="">Uldhan</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pincode">Pincode:</label>
+                        <input type="number" id="pincode" name="pincode" placeholder="Enter the Pincode" required>
+                    </div>
+                </div>
+            </div>
+            <h3>Contact information:</h3>
+            <div class="form-group">
+                <label for="contact-info">Mobile No: </label>
+                <input type="number" id="contact-info" name="contact-info" placeholder="Enter your mobile number"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Create the strong password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter the password"
+                    required>
+            </div>
+            <div id="password-match-error" style="display: none; color: red;">
+                Password and confirm password do not match.
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Sign Up">
+            </div>
+            <div class="login-link">
+                <p>Already have an account? <a href="loginsignup/login.php">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function toggleAddressFields() {
+            var userTypeSelect = document.getElementById('user-type');
+            var addressFields = document.getElementById('address-fields');
+
+            if (userTypeSelect.value === 'remedies-provider') {
+                addressFields.style.display = 'block';
+            } else {
+                addressFields.style.display = 'none';
+            }
+        }
+        function validateForm() {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert("Password and Confirm Password do not match");
+                return false;
+            }
+
+            return true;
+        }
+
+        document.getElementById('signup-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form values
+            var firstName = document.getElementById('first-name').value;
+            var lastName = document.getElementById('last-name').value;
+            var gender = document.getElementById('gender').value;
+            var userType = document.getElementById('user-type').value;
+            var country = document.getElementById('country').value;
+            var state = document.getElementById('state').value;
+            var distt = document.getElementById('distt').value;
+            var gram = document.getElementById('gram').value;
+            var pincode = document.getElementById('pincode').value;
+            var contactInfo = document.getElementById('contact-info').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Create user object
+            var user = {
+                firstName: firstName,
+                lastName: lastName,
+                gender: gender,
+                userType: userType,
+                address: {
+                    country: country,
+                    state: state,
+                    distt: distt,
+                    gram: gram,
+                    pincode: pincode
+                },
+                contactInfo: contactInfo,
+                email: email,
+                password: password
+            };
+
+            // Save user data in local storage
+            localStorage.setItem('user', JSON.stringify(user));
+
+            // Redirect to profile page
+            window.location.href = 'profile_page.html';
+        });
+    </script>
+
+</body>
+
+</html>

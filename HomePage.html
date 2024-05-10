@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attractive Header Example</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="header1.css">
+</head>
+<body>
+
+    <!--------------------------------------Header start-----------------------------------------> 
+  
+
+
+
+
+
+  <header class="container-fluid header-container">
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-center">
+        
+        <h1 class="brand-title">Natural Herbs</h1>
+      </div>
+      <div class="col-md-6 d-flex justify-content-end align-items-center">
+        <nav class="nav">
+          <a class="nav-link" href="HomePage.html">Home</a>
+          <a class="nav-link" href="#remedy">Remedies</a>
+          <a class="nav-link" href="health_tips.html">Health Tips</a>
+          <a class="nav-link" href="about_us.html">About</a>
+          <!--<button class="btn btn-primary">Get Started</button>-->
+        </nav>
+        <a href="loginsignup/index.php" class="profile-image">
+            <img src="images\profile1.jpg" alt="Profile Picture" width="40" height="40" class="rounded-circle">
+          </a>
+       
+     
+      </div>
+    </div>
+    <div></div>
+  </header>
+<!------------------------------------------Header end----------------------------------------------->
+
+
+<!--slider starts-->
+<slider>
+<div class="carousel-container">
+    <div class="carousel-slide">
+    </div>
+</div> 
+<script>
+    const imageLinks = [
+      "images/slider1.jpg",
+      "images/slider2.jpg",
+      "images/slider3.jpg",
+      "images/slider4.jpg",
+      "images/slider5.jpg",
+      "images/slider6.jpg",
+      // Add more image links as needed
+    ];
+
+    const carouselSlide = document.querySelector('.carousel-slide');
+
+    let counter = 0;
+    const size = imageLinks.length;
+
+    // Function to create image elements dynamically
+    function createImageElements() {
+      carouselSlide.innerHTML = ''; // Clear existing content
+      imageLinks.forEach((link, index) => {
+        const img = document.createElement('img');
+        img.src = link;
+        img.alt = `Image ${index + 1}`;
+        carouselSlide.appendChild(img);
+      });
+    }
+
+    createImageElements(); // Initial creation of image elements
+
+    // Function to update slide position
+    function updateSlidePosition() {
+      const offset = -counter *100; // Assuming each image takes 100% width
+      carouselSlide.style.transform = `translateX(${offset}%)`;
+    }
+
+    // Timer to automatically change images
+    setInterval(() => {
+      counter = (counter + 1) % (size-1);
+      updateSlidePosition();
+    }, 1000); // Change images every one second
+  </script>
+</slider>
+
+<!------------------------------------------slider end------------------------------------------>
+
+<!---------------------------------------section part satart------------------------------------>
+<section>
+ 
+  <head><style>
+    /* Styles for layout */
+    .secttion-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      box-sizing: 2px;
+      padding: 40px 0;
+    }
+    .section-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-radius: 2px;
+    }
+    .section-column {
+      flex: 0 0 30%; /* Three columns, each taking 30% of the container width */
+     
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background-color: grey;
+      box-shadow: blue;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: transform 0.3s ease; 
+    }
+    img:hover {
+        transform: translateY(-10px); /* Applying hover effect */
+        box-shadow: 0 8px 16px 0 rgba(234, 6, 255, 0.2);
+    }
+    .Remediest {
+      display: grid;
+      grid-template-columns: repeat(3, 450px);
+      align-items: center;
+      column-gap: 1.6rem;
+      margin-top: 5rem;
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+    .Remediest::before, .Remediest::after {
+      content:"";
+      height: 4px;
+      background-color: rgb(115, 27, 183);;
+      display: block;
+      justify-content: space-between;
+      
+    } 
+  
+  
+    .Cosematics {
+      display: grid;
+      grid-template-columns: repeat(3, 450px);
+      align-items: center;
+      column-gap: 1.6rem;
+      margin-top: 5rem;
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+    .Cosematics::before, .Cosematics::after {
+      content:"";
+      height: 4px;
+      background-color: rgb(115, 27, 183);
+      display: block;
+      justify-content: space-between;
+      
+    } 
+  
+    .view-more-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    margin-left: 500px;
+  }
+
+  /* Change button color on hover */
+  .view-more-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .view-more-btn1 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+  }
+
+  /* Change button color on hover */
+  .view-more-btn:hover {
+    background-color: #45a049;
+  }
+
+  
+  .view-more-btn0{
+    display: flex;
+  }
+
+  .secttion-container {
+              max-width: 1200px;
+              margin: 0 auto;
+              box-sizing: 2px;
+              padding: 40px 0;
+            }
+            .section-row {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 20px;
+              border-radius: 2px;
+            }
+            .section-column {
+              flex: 0 0 30%; /* Three columns, each taking 30% of the container width */
+             
+            }
+            img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 10px;
+              background-color: grey;
+              box-shadow: blue;
+              box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+              transition: transform 0.3s ease; 
+            }
+            img:hover {
+                transform: translateY(-10px); /* Applying hover effect */
+                box-shadow: 0 8px 16px 0 rgba(234, 6, 255, 0.2);
+            }
+            .Remediest {
+              display: grid;
+              grid-template-columns: repeat(3, 450px);
+              align-items: center;
+              column-gap: 1.6rem;
+              margin-top: 5rem;
+              margin-left: 100px;
+              margin-right: 100px;
+            }
+            .Remediest::before, .Remediest::after {
+              content:"";
+              height: 4px;
+              background-color: rgb(115, 27, 183);;
+              display: block;
+              justify-content: space-between;
+              
+            } 
+          
+          
+            .Cosematics {
+              display: grid;
+              grid-template-columns: repeat(3, 450px);
+              align-items: center;
+              column-gap: 1.6rem;
+              margin-top: 5rem;
+              margin-left: 100px;
+              margin-right: 100px;
+            }
+            .Cosematics::before, .Cosematics::after {
+              content:"";
+              height: 4px;
+              background-color: rgb(115, 27, 183);
+              display: block;
+              justify-content: space-between;
+              
+            } 
+          
+            .view-more-btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            margin-left: 700px;
+          }
+        
+          /* Change button color on hover */
+          .view-more-btn:hover {
+            background-color: #45a049;
+          }
+  
+  </style></head>
+
+
+
+</style></head>
+
+   <!----------------------------------Remediest-------------------------------------->
+     <h2 class="Remediest" id="remedy"><center>Remedy Categories</center></i></h2>
+
+  <div class="secttion-container" >
+    <div class="section-row">
+      <div class="section-column">
+        <img src="images\Fever1.jpg" alt="Image 1">
+        <h3><center>Fever</center></h3>
+      </div>
+      <div class="section-column">
+       <a href="cough_res.html"> <img src="images\Coughf.jpg" alt="Image 2"></a>
+        <h3><center>Cough </center> </h3>
+      </div>
+      <div class="section-column">
+       <a href="cold_res.html"> <img src="images\Cough & Cold.jpg" alt="Image 3"></a>
+        <h3><center>Cold</center></h3>
+      </div>
+    </div> 
+    <div class="section-row">
+      <div class="section-column">
+        <img src="images\headache.jpg" alt="Image 4">
+        <h3><center>Headache</center></h3>
+      </div>
+      <div class="section-column">
+        <img src="images\diarrhea.jpg" alt="Image 5">
+        <h3><center>Diarrhea</center></h3>
+      </div>
+      <div class="section-column">
+        <img src="images\dizziness.jpg" alt="Image 6">
+        <h3><center>Dizziness</center></h3>
+      </div>
+    </div>
+    <div class="section-row">
+      <div class="section-column">
+        <img src="images\constipation.jpg" alt="Image 7">
+        <h3><center>Constipation</center></h3>
+      </div>
+      <div class="section-column">
+        <img src="images\itching.jpg" alt="Image 8">
+        <h3><center>Itching</center></h3>
+      </div>
+      <div class="section-column">
+        <img src="images\Vomating.jpg" alt="Image 9">
+        <h3><center>Vomiting</center></h3>
+      </div>
+    </div>
+  </div>
+
+ <div class="view-more-btn0">
+  <button class="view-more-btn">
+    <a  href="searchbar.html" style="color: white;">View More Remedy</a></button>
+
+    <button class="view-more-btn1" style="margin-left: 100px;">
+      <a  href="signup_page.html" style="color: white;">Upload Remedy</a></button>
+  
+ </div>
+<!-----------------------------------------Cosematics--------------------------------------------->
+<h2 class="Cosematics"><center>Cosematics Categories</center></i></h2>
+
+  <div class="secttion-container">
+    <div class="section-row">
+      <div class="section-column">
+        <img src="images\hairfall.jpg" alt="Image 1">
+        <h3><center>Hairfall</center></h3>
+      </div>
+      <div class="section-column">
+        <img src="images\Acne.jpg" alt="Image 2">
+        <h3><center>Acne</center> </h3>
+      </div>
+      <div class="section-column">
+        <img src="images\Dermatitis.jpg" alt="Image 3">
+        <h3><center>Dermatitis</center></h3>
+      </div>
+    </div>
+    <div class="section-row">
+      <div class="section-column">
+        <img src="images\Facial cellulitis.jpg" alt="Image 4">
+        <h3><center>Facial cellulitis</center></h3>
+      </div>
+      <div class="section-column">
+        <img src="images\milia.jpg" alt="Image 5">
+        <h3><center>Milia</center></h3>
+      </div>
+      <div class="section-column">
+        <img src="images\Sunburn.jpg" alt="Image 6">
+        <h3><center>Sunburn</center></h3>
+      </div>
+    </div>
+    
+  </div>
+
+
+<!---------------------------------------Health Tips-------------------------------------------->
+
+<h2 class="Cosematics"><center> Health Tips </center></i></h2>
+
+  <div class="secttion-container">
+    <div class="section-row">
+      <div class="section-column">
+        <img src="images\morningwalk.jpg" alt="Image 1">
+        <h3><center>Morning Walk</center></h3>
+      </div>
+      <div class="section-column">
+        <img src="images\sleepwell.jpg" alt="Image 2">
+        <h3><center>Sleep Well </center> </h3>
+      </div>
+      <div class="section-column">
+        <img src="images\Stay Hydrated.jpg" alt="Image 3">
+        <h3><center>Stay Hydrated</center></h3>
+      </div>
+    </div>
+    <div class="secttion-container">
+      <div class="section-row">
+        <div class="section-column">
+          <img src="images\excercise.jpg" alt="Image 1">
+          <h3><center>Exercise daily</center></h3>
+        </div>
+        <div class="section-column">
+          <img src="images\swimming.jpg" alt="Image 2">
+          <h3><center>Swimming </center> </h3>
+        </div>
+        <div class="section-column">
+          <img src="images\take a break.jpg" alt="Image 3">
+          <h3><center>Take a Break</center></h3>
+        </div>
+      </div>
+
+      <div class="secttion-container">
+        <div class="section-row">
+          <div class="section-column">
+            <img src="images\Blood pressure.jpg" alt="Image 1">
+            <h3><center>Monitor Blood Pressure</center></h3>
+          </div>
+          <div class="section-column">
+            <img src="images\Stop smoking.jpg" alt="Image 2">
+            <h3><center>Stop smoking </center> </h3>
+          </div>
+          <div class="section-column">
+            <img src="images\nostress.jpg" alt="Image 3">
+            <h3><center>No stress</center></h3>
+          </div>
+        </div>
+    
+  </div>
+
+
+
+
+  <!-- -------------------------------section -->
+
+
+<h2 class="Remediest" id="remedy"><center>Natural Herbs</center></i></h2>
+
+  <div class="secttion-container" >
+    <div class="section-row">
+      <div class="section-column">
+      <a href="description.html"><img src="images\Tulsi.jpg" alt="Image 1">
+        <h3 style="color: black;"><center>Tulsi</center></h3></a>
+      </div>
+      <div class="section-column">
+        <a href="Corianderdescription.html"><img src="images\Coriander.jpg" alt="Image 2">
+        <h3 style="color: black;"><center>Coriander</center> </h3></a>
+      </div>
+      <div class="section-column">
+        <a href="clovedescription.html"><img src="images\Clove.jpg" alt="Image 3">
+        <h3 style="color: black;"><center>Clove</center></h3>
+      </a>
+      </div>
+    </div>
+    <div class="section-row">
+      <div class="section-column">
+        <a href="gingerdescription.html"><img src="images\Ginger.jpg" alt="Image 4">
+        <h3 style="color: black;"><center>Ginger</center></h3></a>
+      </div>
+      <div class="section-column">
+        <a href="Turmericdescription.html"><img src="images\Turmeric.jpg" alt="Image 5">
+        <h3 style="color: black;"><center>Turmeric</center></h3></a>
+      </div>
+      <div class="section-column">
+        <a href="mintdescription.html"><img src="images\Mint.jpg" alt="Image 6">
+        <h3 style="color: black;"><center>Mint</center></h3></a>
+      </div>
+    </div>
+    
+  </div>
+
+  
+
+  
+<!-----------------------------------------Cosematics--------------------------------------------->
+<h2 class="Cosematics"><center>Skin Care Herbs</center></i></h2>
+
+  <div class="secttion-container">
+    <div class="section-row">
+      <div class="section-column">
+        <a href="neemdescription.html"><img src="images\Neem.jpg" alt="Image 1">
+        <h3 style="color: black;"><center>Neem</center></h3>
+      </a>
+      </div>
+      <div class="section-column">
+        <a href="Sandlewooddescription.html"><img src="images\Sandalwood (Santalum album).jpg" alt="Image 2">
+        <h3 style="color: black;"><center>Sandalwood (Santalum album)</center> </h3></a>
+      </div>
+      <div class="section-column">
+        <a href="Aloe vera.html"><img src="images\Aloe Vera.jpg" alt="Image 3">
+        <h3 style="color: black;"><center>Aloe Vera</center></h3></a>
+      </div>
+    </div>
+    <div class="section-row">
+      <div class="section-column">
+        <a href="Manjistha (Rubia cordifolia)description.html"><img src="images\Manjistha (Rubia cordifolia).jpg" alt="Image 4">
+        <h3 style="color: black;"><center>Manjistha (Rubia cordifolia)</center></h3></a>
+      </div>
+      <div class="section-column">
+        <a href="Brahmi (Bacopa monnieri)description.html"><img src="images\Brahmi (Bacopa monnieri).jpg" alt="Image 5">
+        <h3 style="color: black;"><center>Brahmi (Bacopa monnieri)</center></h3></a>
+      </div>
+      <div class="section-column">
+        <a href="Rose waterdescription.html"><img src="images\Rose.jpg" alt="Image 6">
+        <h3 style="color: black;"><center>Rose Water</center></h3></a>
+      </div>
+    </div>
+    
+  </div>
+
+<!---------------------------------------Health Tips-------------------------------------------->
+
+<h2 class="Cosematics"><center>Herbs for Hairs</center></i></h2>
+
+  <div class="secttion-container">
+    <div class="section-row">
+      <div class="section-column">
+       <a href="Amladescription.html"> <img src="images\Amla.jpg" alt="Image 1">
+        <h3 style="color: black;"><center>Amla</center></h3></a>
+      </div>
+      <div class="section-column">
+        <a href="coconut oildescription.html"><img src="images\Coconut oil.jpg" alt="Image 2">
+        <h3 style="color: black;"><center>Coconut oil </center> </h3></a>
+      </div>
+      <div class="section-column">
+        <a href="hibiscusdescription.html"><img src="images\Hibiscus.jpg" alt="Image 3">
+        <h3 style="color: black;"><center>Hibiscus</center></h3></a>
+      </div>
+    </div>
+    <div class="secttion-container">
+      <div class="section-row">
+        <div class="section-column">
+          <a href="Shikakaidescription.html"><img src="images\Shikakai.jpg" alt="Image 1">
+          <h3 style="color: black;"><center>Shikakai</center></h3></a>
+        </div>
+        <div class="section-column">
+          <a href="Fenugreek (Methi)description.html"><img src="images\Fenugreek (Methi).jpg" alt="Image 2">
+          <h3 style="color: black;"><center>Fenugreek (Methi) </center> </h3></a>
+        </div>
+        <div class="section-column">
+          <a href="Bhringraj (Eclipta alba)description.html"><img src="images\Bhringraj (Eclipta alba).jpg" alt="Image 3">
+          <h3 style="color: black;"><center>Bhringraj (Eclipta alba):</center></h3></a>
+        </div>
+      </div>
+
+      
+    
+  </div>
+
+</section>
+
+
+
+
+
+<!---------------------------------------section part end--------------------------------------->
+<footer>
+  <div class="Footer-container">
+      <div class="footer-content">
+          <h3 class="h3heading1"><a class="nav-link1" href="contact_us.html">Contact Us</a></h3>
+          <p style="color: rgb(255, 255, 255);">Email: teamatharva05@gmail.com</p>
+          <p style="color: aliceblue;">Phone: +9193991163536</p>
+          <p style="color: aliceblue;">Address: Takshshila Hostel SISTec-R Ratibad, Bhopal</p>
+      </div>
+      <div class="footer-content">
+          <h3 class="h3heading">Quick Links</h3>
+           <ul class="list">
+              <li><a href="HomePage.html"  class="fooheadlink">Home</a></li>
+              <li><a href="#remedy"  class="fooheadlink">Remedies</a></li>
+              <li><a href=""  class="fooheadlink">Community</a></li>
+              <li><a href="about_us.html"  class="fooheadlink">About</a></li>
+            
+           </ul>
+      </div>
+      <div class="footer-content">
+          <h3 class="h3heading">Follow Us</h3>
+          <ul class="social-icons">
+           <li><a href="" ><i class="fab fa-facebook"></i></a></li>
+           <li><a href=""><i class="fab fa-twitter"></i></a></li>
+           <li><a href=""><i class="fab fa-instagram"></i></a></li>
+           <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+          </div>
+  </div>
+  <div class="bottom-bar">
+      <p>&copy; 2024 Natural herbs. All rights reserved</p>
+  </div>
+</footer>
+</body>
+</html>

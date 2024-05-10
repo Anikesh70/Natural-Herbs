@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tips</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="header1.css">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            background-image: url('images/back 5.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 1.5rem;
+            background-image: url('images/back 4.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0e0d0d;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .health-tip {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .health-tip:hover {
+            transform: translateY(-5px);
+        }
+
+        .health-tip img {
+            width: 200px;
+            height: auto;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .health-tip-content {
+            padding: 20px;
+        }
+
+        .health-tip-content h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .health-tip-content p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .health-tip {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--------------------------------------Header start----------------------------------------->
+    <header class="container-fluid header-container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+
+                <h1 class="brand-title">Natural Herbs</h1>
+            </div>
+            <div class="col-md-6 d-flex justify-content-end align-items-center">
+                <nav class="nav">
+                    <a class="nav-link" href="HomePage.html">Home</a>
+                    <a class="nav-link" href="#">Remedies</a>
+                    <a class="nav-link" href="health_tips.html">Health Tips</a>
+                    <a class="nav-link" href="about_us.html">About</a>
+                    <!--<button class="btn btn-primary">Get Started</button>-->
+                </nav>
+                <a href="#" class="profile-image">
+                    <img src="images/profile1.jpg" alt="Profile Picture" width="40" height="40" class="rounded-circle">
+                </a>
+
+
+            </div>
+        </div>
+        <div></div>
+    </header>
+    <!------------------------------------------Header end----------------------------------------------->
+
+
+    <div class="container">
+        <h2>Health Tips</h2>
+        <div class="health-tip">
+            <img src="images/morningwalk.jpg" alt="Health Tip Image">
+            <div class="health-tip-content">
+                <h3>Morning Walk</h3>
+                <p><strong>Morning walk increase energy levels and enhance physical and mental well-being.</strong></p>
+            </div>
+        </div>
+
+        <div class="health-tip">
+            <img src="images/sleepwell.jpg" alt="Health Tip Image">
+            <div class="health-tip-content">
+                <h3>sleep well</h3>
+                <p><strong>Morning walk increase energy levels and enhance physical and mental well-being.</strong></p>
+            </div>
+        </div>
+
+        <div class="health-tip">
+            <img src="images/Stay Hydrated.jpg" alt="Health Tip Image">
+            <div class="health-tip-content">
+                <h3>Stay Hydrated</h3>
+                <p><strong>Morning walk increase energy levels and enhance physical and mental well-being.</strong></p>
+            </div>
+        </div>
+
+        <div class="health-tip">
+            <img src="images/excercise.jpg" alt="Health Tip Image">
+            <div class="health-tip-content">
+                <h3>Exercise Daily</h3>
+                <p><strong>Morning walk increase energy levels and enhance physical and mental well-being.</strong></p>
+            </div>
+        </div>
+
+        <div class="health-tip">
+            <img src="images/swimming.jpg" alt="Health Tip Image">
+            <div class="health-tip-content">
+                <h3>Swimming</h3>
+                <p><strong>Morning walk increase energy levels and enhance physical and mental well-being.</strong></p>
+            </div>
+        </div>
+
+        <div class="health-tip">
+            <img src="images/take a break.jpg" alt="Health Tip Image">
+            <div class="health-tip-content">
+                <h3>Take a break</h3>
+                <p><strong>Morning walk increase energy levels and enhance physical and mental well-being.</strong></p>
+            </div>
+        </div>
+
+        <div class="health-tip">
+            <img src="images/Blood pressure.jpg" alt="Health Tip Image">
+            <div class="health-tip-content">
+                <h3>Monitor Blood pressure</h3>
+                <p><strong>Morning walk increase energy levels and enhance physical and mental well-being.</strong></p>
+            </div>
+        </div>
+        <!-- Repeat for other health tips -->
+
+    </div>
+</body>
+
+</html>

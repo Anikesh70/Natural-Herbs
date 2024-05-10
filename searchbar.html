@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Diseases</title>
+  <link rel="stylesheet" href="searchbar.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="header1.css">
+  <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+  <style>
+    .srch {
+      color: white;
+      margin-left: 12px;
+      font-size: 18px;
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!--------------------------------------Header start----------------------------------------->
+  <header class="container-fluid header-container">
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-center">
+
+        <h1 class="brand-title">Natural Herbs</h1>
+      </div>
+      <div class="col-md-6 d-flex justify-content-end align-items-center">
+        <nav class="nav">
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#">Remedies</a>
+          <a class="nav-link" href="#">Health Tips</a>
+          <a class="nav-link" href="about_us.html">About</a>
+          <!--<button class="btn btn-primary">Get Started</button>-->
+        </nav>
+        <a href="#" class="profile-image">
+          <img src="images/profile1.jpg" alt="Profile Picture" width="40" height="40" class="rounded-circle">
+        </a>
+
+
+      </div>
+    </div>
+    <div></div>
+  </header>
+  <!------------------------------------------Header end----------------------------------------------->
+
+  <div class="container">
+    <h1>List of Diseases</h1>
+    <input type="text" id="searchInput" placeholder="Search for a disease...">
+
+    <ul id="diseaseList">
+      <!-- Disease items will be dynamically added here -->
+    </ul>
+
+    <body>
+      <div class="container" style="background:none; margin-top: -15px;margin-left: -10px;">
+        <div class="srch">
+          <div class="rem1"
+            style="width: 100%; height: 45px; background-color: #f8f5f5; padding: 10px; border-radius: 8px; margin-top: -15px; margin-left: 14px;">
+            <ul id="diseaseList"> <a href="cold_res.html"
+                style="margin-bottom: 6px; margin-left:-30px; color:black; font-size: 15px;">Cold</a>
+            </ul>
+          </div>
+
+
+          <a href="cold_des.html">
+            <div class=" rem1"
+              style="width: 100%; height: 45px; background-color: #f8f5f5; padding: 10px; border-radius: 8px;margin-top: 8px; margin-left: 12px;">
+              <ul id="diseaseList"> <a href="cold_res.html"
+                  style="margin-bottom: 6px; margin-left:-30px; color:black; font-size: 15px;">Cough</a>
+              </ul>
+            </div>
+          </a>
+
+        </div>
+      </div>
+  </div>
+</body>
+  </div>
+
+  <script src="searchbar.js"></script>
+
+
+</body>
+
+
+
+
+
+</html>

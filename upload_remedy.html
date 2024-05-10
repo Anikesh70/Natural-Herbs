@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Remedies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-yD9DjdgPlyO/2C3H6VX6GFp7N05rFbXhFb2qnzGkaFNj2ocTqURqB+5R8xlyDWMDm6t+TUwpbMXJ7sQtwEqKsg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="header1.css">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f5f5f5; */
+            background-image: url('images/back 3.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            /* background-color: #fff; */
+            background-image: url('images/back 4.jpg');
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 30px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 18px;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group textarea:focus {
+            border-color: #4caf50;
+        }
+
+        .form-group textarea {
+            height: 100px;
+        }
+
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 15px 0;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .upload-icon {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .upload-icon i {
+            font-size: 48px;
+            color: #4caf50;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .upload-icon i:hover {
+            transform: scale(1.2);
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-label {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .file-label:hover,
+        .file-upload:hover {
+            color: #4caf50;
+        }
+
+        .upload-preview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .upload-preview img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            /* Set width to 200px */
+            height: 200px;
+            /* Set height to 100px */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover container */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--------------------------------------Header start----------------------------------------->
+    <header class="container-fluid header-container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+
+                <h1 class="brand-title">Natural Herbs</h1>
+            </div>
+            <div class="col-md-6 d-flex justify-content-end align-items-center">
+                <nav class="nav">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Remedies</a>
+                    <a class="nav-link" href="#">Health Tips</a>
+                    <a class="nav-link" href="about_us.html">About</a>
+                    <!--<button class="btn btn-primary">Get Started</button>-->
+                </nav>
+                <a href="#" class="profile-image">
+                    <img src="images/profile1.jpg" alt="Profile Picture" width="40" height="40" class="rounded-circle">
+                </a>
+
+
+            </div>
+        </div>
+        <div></div>
+    </header>
+    <!------------------------------------------Header end----------------------------------------------->
+
+    <div class="container">
+        <h1>Upload Remedies</h2>
+            <div class="upload-preview" id="upload-preview">
+                <img id="preview-image" src="#" alt="Preview Image" style="display: none;">
+            </div>
+            <form action="remedy_upload.php" method="post">
+                <div class="upload-icon">
+                    <label for="file-upload"><i class="fas fa-upload"></i>Choose a file or drag it here</label>
+                    <input type="file" id="file-upload" class="file-input" onchange="previewImage(event)">
+                    <!-- <span class="file-label"></span> -->
+                </div>
+                <div class="form-group">
+                    <label for="remedy-title">Title:</label>
+                    <input type="text" id="remedy-title" name="remedy-title" placeholder="Enter remedy title" required>
+                </div>
+                <div class="form-group">
+                    <label for="remedy-description">Description of Remedy:</label>
+                    <textarea id="remedy-description" name="remedy-description" placeholder="Enter remedy description"
+                        required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="remedy-ingredients">Ingredients:</label>
+                    <textarea id="remedy-ingredients" name="remedy-ingredients"
+                        placeholder="Enter remedy ingredients (separated by commas)" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="remedy-steps">Steps:</label>
+                    <textarea id="remedy-steps" name="remedy-steps" placeholder="Enter remedy steps"
+                        required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Upload">
+                </div>
+            </form>
+    </div>
+    <!---------------------------------------Footer part start--------------------------------------->
+
+    <footer>
+        <div class="Footer-container">
+            <div class="footer-content">
+                <h3 class="h3heading">Contact Us</h3>
+                <p style="color: rgb(255, 255, 255);">Email: teamatharva05@gmail.com</p>
+                <p style="color: aliceblue;">Phone: +9193991163536</p>
+                <p style="color: aliceblue;">Address: Takshshila Hostel SISTec-R Ratibad, Bhopal</p>
+            </div>
+            <div class="footer-content">
+                <h3 class="h3heading">Quick Links</h3>
+                <ul class="list">
+                    <li><a href="" class="fooheadlink">Home</a></li>
+                    <li><a href="" class="fooheadlink">Remedies</a></li>
+                    <li><a href="" class="fooheadlink">Community</a></li>
+                    <li><a href="" class="fooheadlink">About</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3 class="h3heading">Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2024 Natural herbs. All rights reserved</p>
+        </div>
+    </footer>
+    <!---------------------------------------Footer part end--------------------------------------->
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function previewImage(event) {
+            var preview = document.getElementById('preview-image');
+            var file = event.target.files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '#';
+            }
+        }
+    </script>
+</body>
+
+</html>
